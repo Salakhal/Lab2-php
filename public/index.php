@@ -33,10 +33,10 @@ use App\Repository\FakeEtudiantRepository;
 
 $repo = new FakeEtudiantRepository();
 
-$f1 = new Filiere(1, "INFO");
+$f1 = new Filiere(1, "Physique");
 
-$e1 = new Etudiant(null, "Salma", "saalma@gmail.com", $f1);
-$e2 = new Etudiant(null, "Ali", "Ali@gmail.com", $f1);
+$e1 = new Etudiant(null, "Hafssa", "hafssa@gmail.com", $f1);
+$e2 = new Etudiant(null, "Sami", "sami@gmail.com", $f1);
 
 $repo->save($e1);
 $repo->save($e2);
@@ -46,7 +46,7 @@ foreach ($repo->findAll() as $e) {
     echo $e->getId() . " - " . $e->getNom() . "<br>";
 }
 
-$e1->setNom("Salma Benali");
+$e1->setNom("Sami Alami");
 $repo->save($e1);
 
 echo "Modificationn:" . "<br>";
